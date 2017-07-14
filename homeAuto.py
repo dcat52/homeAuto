@@ -17,7 +17,8 @@ def main():
 	
 	try:
 		while True:
-			a = ""
+			print "transmitter thread alive?", transmitter.isAlive()
+			print "dweeter thread alive?", dweeter.isAlive()
 	except KeyboardInterrupt:
 		dweeter.stop()
 		transmitter.stop()
