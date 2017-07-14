@@ -14,10 +14,9 @@ class Transmit():
 		print data
 		item,state = data
 		print item,state
-		send(DEVICES[item][state])
+		self.send(DEVICES[item][state])
 		
 	def send(self, code):
 		print "Sending code", code
 		subprocess.call(["/var/www/rfoutlet/codesend", code])
 		sleep(0.2)
-		getCode()
