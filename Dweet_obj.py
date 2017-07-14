@@ -5,7 +5,7 @@ import json
 from collections import namedtuple
 
 DWEET_STREAM = 'dsctest'
-DELAY = 2
+DELAY = 1
 
 class Dweet():
 	def __init__(self):
