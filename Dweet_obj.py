@@ -10,7 +10,7 @@ FAIL_SLEEP = 1.1
 class Dweet():
 	def __init__(self):
 		print "Dweet begun"
-		self.transmit = transmit()
+		self.transmit = Transmit()
 		self.failCount = 0
 
 	def newDweet(self, dweet):
