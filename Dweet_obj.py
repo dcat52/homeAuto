@@ -20,8 +20,8 @@ class Dweet():
 		print "Dweet received data"
 		jstr = json.dumps(dweet)
 		obj = json2obj(jstr)
-		data = (str(b.content.item), str(b.content.set))
-		print "Dweet object put in queue"
+		data = (str(obj.content.item), str(obj.content.set))
+		print "sending data to transmit"
 		self.transmit.getCode(data)
 		
 	def pullDweets(self):
