@@ -12,6 +12,8 @@ class Dweet():
 		print "Dweet begun"
 		self.transmit = Transmit()
 		self.failCount = 0
+		self.pullDweets()
+
 
 	def newDweet(self, dweet):
 		# parse dweet
