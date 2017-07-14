@@ -16,15 +16,13 @@ def main():
 	transmitter.start()
 	
 	try:
-		while True:
-			print "transmitter thread alive?", transmitter.isAlive()
-			print "dweeter thread alive?", dweeter.isAlive()
-	except KeyboardInterrupt:
-		dweeter.stop()
-		transmitter.stop()
+		while threading.active_count() > 0:
+    		time.sleep(0.1)
 		
 if __name__ == "__main__":
 	main()
 
 
+dweeter.stop()
+transmitter.stop()
 print "All Dead"
