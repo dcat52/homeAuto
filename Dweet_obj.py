@@ -1,13 +1,14 @@
 import threading
 import Queue
 from time import sleep
+import dweepy
 import json
 from collections import namedtuple
 
 DWEET_STREAM = 'dscnasa'
 FAIL_SLEEP = 1.1
 
-class Dweet_obj(threading.Thread):
+class Dweet(threading.Thread):
 	def __init__(self, queue):
 		print "Dweet begun"
 		threading.Thread.__init__(self)

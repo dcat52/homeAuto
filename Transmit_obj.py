@@ -7,7 +7,7 @@ DEVICES = { \
 	"tw" : {"on" : "87347", "off" : "87356"}, \
 	"li" : {"on" : "1", "off" : "0"}}
 
-class Transmit_obj(threading.Thread):
+class Transmit(threading.Thread):
 	def __init__(self, queue):
 		print "Transmit begun"
 		threading.Thread.__init__(self)

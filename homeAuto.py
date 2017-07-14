@@ -1,6 +1,6 @@
 # homeAuto
-import Dweet_obj
-import Transmit_obj
+from Dweet_obj import Dweet
+from Transmit_obj import Transmit
 
 import threading
 import Queue
@@ -10,8 +10,8 @@ def main():
 	print "Main begun"
 	queue = Queue.Queue()
 	
-	dweeter = Dweet_obj(queue)
-	transmitter = Transmit_obj(queue)
+	dweeter = Dweet(queue)
+	transmitter = Transmit(queue)
 	dweeter.start()
 	transmitter.start()
 	
