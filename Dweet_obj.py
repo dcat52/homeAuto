@@ -5,7 +5,7 @@ import json
 from collections import namedtuple
 
 DWEET_STREAM = 'dscnasa'
-FAIL_SLEEP = 2
+DELAY = 2
 
 class Dweet():
 	def __init__(self):
@@ -26,6 +26,8 @@ class Dweet():
 	def pullDweets(self):
 		# dweet stream
 		
+		sleep(DELAY)
+
 		try:
 			for dweet in dweepy.listen_for_dweets_from(DWEET_STREAM):
 				print dweet
@@ -34,7 +36,6 @@ class Dweet():
 		except Exception, e:
 			self.failCount += 1
 			print "Total failCount:", self.failCount
-			sleep(FAIL_SLEEP)
 			self.pullDweets()
 
 def _json_object_hook(d): return namedtuple('X', d.keys())(*d.values())
