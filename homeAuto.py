@@ -17,7 +17,7 @@ def main():
 	
 	try:
 		while True:
-			wait =	input("press ctrl+c to kill")
+			a = ""
 	except KeyboardInterrupt:
 		dweeter.stop()
 		transmitter.stop()
