@@ -1,6 +1,7 @@
 # homeAuto
 from Dweet_obj import Dweet
 from Transmit_obj import Transmit
+from time import sleep
 
 import threading
 import Queue
@@ -16,7 +17,7 @@ def main():
 	transmitter.start()
 	
 	while threading.active_count() > 0:
-		time.sleep(0.1)
+		sleep(0.1)
 
 if __name__ == "__main__":
 	main()
