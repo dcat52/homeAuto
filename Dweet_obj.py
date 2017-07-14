@@ -32,7 +32,8 @@ class Dweet(threading.Thread):
 		
 		try:
 			for dweet in dweepy.listen_for_dweets_from(DWEET_STREAM):
-				newDweet(dweet)
+				print dweet
+				self.newDweet(dweet)
 		
 		except Exception, e:
 			self.failCount += 1
