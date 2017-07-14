@@ -9,10 +9,10 @@ class Transmit():
 	def __init__(self):
 		print "Transmit begun"
 		
-	def getCode(self, obj):
-		print "transmit got obj"
-		print obj
-		item,state = obj
+	def getCode(self, data):
+		print "transmit got data"
+		print data
+		item,state = data
 		print item,state
 		send(DEVICES[item][state])
 		
