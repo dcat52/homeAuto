@@ -1,4 +1,6 @@
 # homeAuto
+import Dweet_obj
+import Transmit_obj
 
 import threading
 import Queue
