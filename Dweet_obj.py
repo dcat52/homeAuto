@@ -1,5 +1,4 @@
-import threading
-import Queue
+from Transmit_obj import Transmit
 from time import sleep
 import dweepy
 import json
@@ -8,24 +7,19 @@ from collections import namedtuple
 DWEET_STREAM = 'dscnasa'
 FAIL_SLEEP = 1.1
 
-class Dweet(threading.Thread):
-	def __init__(self, queue):
+class Dweet():
+	def __init__(self):
 		print "Dweet begun"
-		threading.Thread.__init__(self)
-		self.queue = queue
+		self.transmit = transmit()
 		self.failCount = 0
-		
-	def stop(self):
-		print "killing Dweet"
-		self.join()
-		
+
 	def newDweet(self, dweet):
 		# parse dweet
 		print "Dweet received data"
 		jstr = json.dumps(dweet)
 		obj = json2obj(jstr)
 		print "Dweet object put in queue"
-		self.queue.put(obj)
+		self.transmit.getCode(obj)
 		
 	def pullDweets(self):
 		# dweet stream
