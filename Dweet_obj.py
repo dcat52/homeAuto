@@ -4,7 +4,7 @@ import dweepy
 import json
 from collections import namedtuple
 
-DWEET_STREAM = 'dscnasa'
+DWEET_STREAM = 'dsctest'
 DELAY = 2
 
 class Dweet():
